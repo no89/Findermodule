@@ -1,0 +1,21 @@
+class FinderModule:
+
+    def finder(findval, splitter, defaultval,  *splittimes):
+        test = []
+        totalval = -1
+        try:
+            times =splittimes[0]
+        except IndexError:
+            times=9999
+        test = defaultval.split(splitter,int(times))
+        if findval in test:
+            is_detected = 1
+            for findval in test:
+                totalval = totalval + 1
+        else:
+            totalval = 0
+            is_detected = 0
+        return totalval
+
+    finder("h", "/", "h/h/h/h/hello")
+        
